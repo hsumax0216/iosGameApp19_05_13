@@ -102,7 +102,7 @@ class BattleViewController: UIViewController {
     func playerAttackAnimated(point:Int){
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.9, delay: 0, animations: {
             self.attackValueLabel.textColor = UIColor(red:0 , green: 0,blue: 1,alpha: 1)
-            self.attackValueLabel.text = String(point)
+            self.attackValueLabel.text = "-" + String(point)
             self.playerSelectImage.center = CGPoint(x: 287.5,y: 234)
             self.computerSelectImage.backgroundColor = UIColor(red: 1,green: 0,blue: 0,alpha: 0.54)
         })
@@ -114,7 +114,7 @@ class BattleViewController: UIViewController {
     func computerAttackAnimated(point:Int){
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.9, delay: 0, animations: {
             self.attackValueLabel.textColor = UIColor(red:1 , green: 0,blue: 0,alpha: 1)
-            self.attackValueLabel.text = String(point)
+            self.attackValueLabel.text = "-" + String(point)
             self.computerSelectImage.center = CGPoint(x: 97.5,y: 396)
             self.playerSelectImage.backgroundColor = UIColor(red: 1,green: 0,blue: 0,alpha: 0.54)
         })
@@ -128,49 +128,52 @@ class BattleViewController: UIViewController {
         var computerValue = Int.random(in:0...2)//janken sciccior == 0 stone == 1 paper == 2
         /*switch(computerValue){
             case 0:
-                if(playerValue==computerValue){
-                    playerAttackAnimated()
+                if playerValue == computerValue{
+                    playerAttackAnimated(point:)
                     //我方攻擊藍色 敵方紅色
-                    computerAttackAnimated()
+         
+                    computerAttackAnimated(point:)
                 }
-                else if(playerValue == 1){
-                    playerAttackAnimated()
+                else if playerValue == 1 {
+                    playerAttackAnimated(point:)
                     
                 }
                 else {
-                    computerAttackAnimated()
+                    computerAttackAnimated(point:)
                     
                 }
                 break
             case 1:
-                if(playerValue==computerValue){
-                    playerAttackAnimated()
-                    //我方攻擊藍色 敵方紅色
-                    computerAttackAnimated()
-                }
-                else if(playerValue == 2){
-                    playerAttackAnimated()
-                    
-                }
-                else {
-                    computerAttackAnimated()
-                    
-                }
+                 if playerValue == computerValue{
+                 playerAttackAnimated(point:)
+                 //我方攻擊藍色 敵方紅色
+         
+                 computerAttackAnimated(point:)
+                 }
+                 else if playerValue == 2 {
+                 playerAttackAnimated(point:)
+         
+                 }
+                 else {
+                 computerAttackAnimated(point:)
+         
+                 }
                 break
             case 2:
-                if(playerValue==computerValue){
-                    playerAttackAnimated()
-                    //我方攻擊藍色 敵方紅色
-                    computerAttackAnimated()
-                }
-                else if(playerValue == 0){
-                    playerAttackAnimated()
-                    
-                }
-                else {
-                    computerAttackAnimated()
-                    
-                }
+                 if playerValue == computerValue{
+                 playerAttackAnimated(point:)
+                 //我方攻擊藍色 敵方紅色
+         
+                 computerAttackAnimated(point:)
+                 }
+                 else if playerValue == 0 {
+                 playerAttackAnimated(point:)
+         
+                 }
+                 else {
+                 computerAttackAnimated(point:)
+         
+                 }
                 break
             default:
                 print("ERROR!")
