@@ -29,8 +29,9 @@ class BattleViewController: UIViewController {
     let grass = pakemon.init(blood: 40, attack: 12, defend: 2)
     let dawae = pakemon.init(blood: 1000, attack: 1000, defend: 1000)
     var isJankened:Bool = false
-    var player:pakemon?
-    var computer:pakemon?
+    var playerWin:Bool = true
+    var playerPakemon:pakemon?
+    var computerPakemon:pakemon?
     var SECOND:Int = 0
     var role: String?
     var comP: String?
@@ -39,7 +40,8 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var computerSelectImage: UIImageView!
     @IBOutlet weak var playerSelectImage: UIImageView!
-    @objc func timeR(){
+    @IBOutlet weak var attackValueLabel: UILabel!
+    /*@objc func timeR(){
         SECOND = SECOND - 1
         if(SECOND > 0){
             print(Int(SECOND))
@@ -52,7 +54,7 @@ class BattleViewController: UIViewController {
             //print(countdownLabel.text)
             timer!.invalidate()
         }
-    }
+    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         SECOND=maxSec
@@ -70,13 +72,15 @@ class BattleViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){(_)in
             self.SECOND-=1
             self.countdownLabel.text = String(self.SECOND)
+            print(self.SECOND)
             if self.isJankened == true{
                 self.timer?.invalidate()
+                self.countdownLabel.font = UIFont.init(name: "Arial", size: 100)
                 self.countdownLabel.text = ""
                 self.SECOND = self.maxSec
-                self.isJankened = false
+                //self.isJankened = false
             }
-            if self.SECOND <= 0{
+            if self.SECOND < 0 && self.isJankened == false{
                 self.timer?.invalidate()
                 self.countdownLabel.font = UIFont.init(name: "Arial", size: 35)
                 let text = "Times up!"
@@ -88,16 +92,91 @@ class BattleViewController: UIViewController {
     }
     @IBAction func paperBtnAction(_ sender: Any) {
         isJankened = true
+        computerAttackAnimated(point:35)
     }
     @IBAction func stoneBtnAction(_ sender: Any) {
+        playerAttackAnimated(point:40)
     }
     @IBAction func scissorsBtnAction(_ sender: Any) {
     }
-    func playerAttackAnimated(){
+    func playerAttackAnimated(point:Int){
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.9, delay: 0, animations: {
+            self.attackValueLabel.textColor = UIColor(red:0 , green: 0,blue: 1,alpha: 1)
+            self.attackValueLabel.text = String(point)
+            self.playerSelectImage.center = CGPoint(x: 287.5,y: 234)
+            self.computerSelectImage.backgroundColor = UIColor(red: 1,green: 0,blue: 0,alpha: 0.54)
+        })
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 3, delay: 0, animations: {
+            self.computerSelectImage.backgroundColor = UIColor(red: 255,green: 255,blue: 255,alpha: 0)
+            self.playerSelectImage.center = CGPoint(x: 97.5,y: 396)
+        })
+    }
+    func computerAttackAnimated(point:Int){
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.9, delay: 0, animations: {
+            self.attackValueLabel.textColor = UIColor(red:1 , green: 0,blue: 0,alpha: 1)
+            self.attackValueLabel.text = String(point)
+            self.computerSelectImage.center = CGPoint(x: 97.5,y: 396)
+            self.playerSelectImage.backgroundColor = UIColor(red: 1,green: 0,blue: 0,alpha: 0.54)
+        })
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 3, delay: 0, animations: {
+            self.playerSelectImage.backgroundColor = UIColor(red: 255,green: 255,blue: 255,alpha: 0)
+            self.computerSelectImage.center = CGPoint(x: 287.5,y: 234)
+        })
         
     }
-    func computejanken(){
-        
+    func computejanken(playerValue:Int){
+        var computerValue = Int.random(in:0...2)//janken sciccior == 0 stone == 1 paper == 2
+        /*switch(computerValue){
+            case 0:
+                if(playerValue==computerValue){
+                    playerAttackAnimated()
+                    //我方攻擊藍色 敵方紅色
+                    computerAttackAnimated()
+                }
+                else if(playerValue == 1){
+                    playerAttackAnimated()
+                    
+                }
+                else {
+                    computerAttackAnimated()
+                    
+                }
+                break
+            case 1:
+                if(playerValue==computerValue){
+                    playerAttackAnimated()
+                    //我方攻擊藍色 敵方紅色
+                    computerAttackAnimated()
+                }
+                else if(playerValue == 2){
+                    playerAttackAnimated()
+                    
+                }
+                else {
+                    computerAttackAnimated()
+                    
+                }
+                break
+            case 2:
+                if(playerValue==computerValue){
+                    playerAttackAnimated()
+                    //我方攻擊藍色 敵方紅色
+                    computerAttackAnimated()
+                }
+                else if(playerValue == 0){
+                    playerAttackAnimated()
+                    
+                }
+                else {
+                    computerAttackAnimated()
+                    
+                }
+                break
+            default:
+                print("ERROR!")
+                break
+        }*/
+        isJankened = false
     }
     /*
     // MARK: - Navigation
