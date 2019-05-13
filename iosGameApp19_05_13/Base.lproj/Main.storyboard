@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.59" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PT8-l2-veH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PT8-l2-veH">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.45"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.47"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,6 +31,15 @@
                                     <segue destination="5D1-lp-02n" kind="show" id="7o0-tR-mFe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CG3-LU-Dnd">
+                                <rect key="frame" x="230" y="210" width="164" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="通知"/>
+                                <connections>
+                                    <action selector="informationBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NMQ-jJ-0h0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -53,12 +62,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqC-Fw-deO">
-                                <rect key="frame" x="65" y="253" width="284" height="390"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqC-Fw-deO">
+                                <rect key="frame" x="65" y="253" width="284" height="287"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" white="1" alpha="0.73405393835616439" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">1.選擇你的PXkemon
+2.以猜拳勝負,
+注意只有15秒的思考時間喔！
+3.訓練猜拳技巧！</string>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -75,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hx9-j5-sHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3700" y="727"/>
+            <point key="canvasLocation" x="2766.666666666667" y="770.75892857142856"/>
         </scene>
         <!--Choos your Pakemon-->
         <scene sceneID="n5B-pK-Zsm">
@@ -171,7 +183,7 @@
             </objects>
             <point key="canvasLocation" x="3700.0000000000005" y="16.741071428571427"/>
         </scene>
-        <!--Battle View Controller-->
+        <!--Battle-->
         <scene sceneID="Go6-Av-0ec">
             <objects>
                 <viewController id="AKU-FO-VUo" customClass="BattleViewController" customModule="iosGameApp19_05_13" customModuleProvider="target" sceneMemberID="viewController">
@@ -233,20 +245,37 @@
                                     <action selector="stoneBtnAction:" destination="AKU-FO-VUo" eventType="touchDown" id="o54-bQ-Yvs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUS-Lt-Ju8">
+                                <rect key="frame" x="133" y="447" width="42" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lc-rF-16j">
+                                <rect key="frame" x="352" y="250" width="42" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="EtJ-Y8-ZiE"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Battle" id="7pJ-3n-eh3"/>
                     <connections>
                         <outlet property="attackValueLabel" destination="Iac-3L-EYd" id="g6C-Vq-iLo"/>
+                        <outlet property="computerLifeLabel" destination="3Lc-rF-16j" id="faj-fK-NrB"/>
                         <outlet property="computerSelectImage" destination="gUM-lA-IVo" id="geq-UA-ffL"/>
                         <outlet property="countdownLabel" destination="e3d-UR-Ihz" id="QXT-sc-376"/>
+                        <outlet property="playerLifeLabel" destination="BUS-Lt-Ju8" id="QHl-eP-ot6"/>
                         <outlet property="playerSelectImage" destination="i0B-Cz-3Un" id="ezo-qr-eOQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfT-5w-Pdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4625" y="19"/>
+            <point key="canvasLocation" x="4624.6376811594209" y="18.75"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SbJ-DG-X47">
@@ -261,7 +290,6 @@
                     <connections>
                         <segue destination="1DE-0J-TBQ" kind="relationship" relationship="viewControllers" id="7Fh-yZ-nwz"/>
                         <segue destination="k8O-QK-JJE" kind="relationship" relationship="viewControllers" id="mRv-YW-Sas"/>
-                        <segue destination="hos-9l-cHJ" kind="relationship" relationship="viewControllers" id="4n5-8P-cLb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Coe-dv-F6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -304,48 +332,60 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7l-Ss-hE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2795.6521739130435" y="726.5625"/>
+            <point key="canvasLocation" x="1861" y="771"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="eVE-2T-PEQ">
+        <!--score-->
+        <scene sceneID="BL7-vp-IpX">
             <objects>
-                <viewController id="jBZ-Xb-WUY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q9y-mq-E7i">
+                <viewController storyboardIdentifier="ScoreView" id="vQf-re-K2T" customClass="ScoreViewController" customModule="iosGameApp19_05_13" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xU1-v6-EJk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="openingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bei-ox-jbk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="openingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4uH-nO-tHp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmA-zO-kj4">
+                                <rect key="frame" x="138" y="279" width="139" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.54328981164383572" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="SCORE">
+                                        <attributes>
+                                            <font key="NSFont" size="35" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0h8-SA-QKI">
+                                <rect key="frame" x="70" y="371" width="275" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.5427547089041096" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="zeT-Ri-CWQ"/>
+                        <viewLayoutGuide key="safeArea" id="RcR-le-gXa"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lmm-dF-DM0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1i7-b9-zSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3700" y="1471"/>
-        </scene>
-        <!--Rank-->
-        <scene sceneID="xkw-Lc-5eW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hos-9l-cHJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rank" image="noun_rank_2215848" id="LfF-GQ-IeY"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hzj-g1-kcs">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                    <navigationItem key="navigationItem" title="score" id="z4h-QE-3n4">
+                        <barButtonItem key="rightBarButtonItem" title="New Game" id="tom-Z2-j8f">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="VMi-O8-nTk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="jBZ-Xb-WUY" kind="relationship" relationship="rootViewController" id="0L7-oN-oG8"/>
+                        <outlet property="scoreLbael" destination="0h8-SA-QKI" id="QDN-YM-yfq"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eH5-Rw-XQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0jY-vo-z81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2790" y="1471"/>
+            <point key="canvasLocation" x="5550.7246376811599" y="16.741071428571427"/>
         </scene>
     </scenes>
     <resources>
@@ -359,10 +399,10 @@
         <image name="img_550914-1" width="150" height="150"/>
         <image name="noun_Book_1228099" width="25" height="25"/>
         <image name="noun_Game_2092048" width="25" height="25"/>
-        <image name="noun_rank_2215848" width="25" height="25"/>
         <image name="openingBackground" width="640" height="960"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CC6-uH-JmK"/>
+        <segue reference="VMi-O8-nTk"/>
     </inferredMetricsTieBreakers>
 </document>

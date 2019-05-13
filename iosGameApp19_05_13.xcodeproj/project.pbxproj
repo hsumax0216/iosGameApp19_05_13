@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C5448022288A92F00B3421D /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5448012288A92F00B3421D /* ScoreViewController.swift */; };
+		9C54480A22895E9E00B3421D /* ScoreClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54480922895E9E00B3421D /* ScoreClass.swift */; };
 		F946A0B222870D2900116686 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946A0B122870D2900116686 /* BattleViewController.swift */; };
 		F946A0B422871D5900116686 /* ChoosePakemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946A0B322871D5900116686 /* ChoosePakemonViewController.swift */; };
 		F946A0B62287348E00116686 /* DAWAEUIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946A0B52287348E00116686 /* DAWAEUIStoryboard.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C5448012288A92F00B3421D /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		9C54480922895E9E00B3421D /* ScoreClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreClass.swift; sourceTree = "<group>"; };
 		F946A0B122870D2900116686 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		F946A0B322871D5900116686 /* ChoosePakemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePakemonViewController.swift; sourceTree = "<group>"; };
 		F946A0B52287348E00116686 /* DAWAEUIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAWAEUIStoryboard.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				F946A0B322871D5900116686 /* ChoosePakemonViewController.swift */,
 				F946A0B52287348E00116686 /* DAWAEUIStoryboard.swift */,
 				F9B6B0692287E687005CED74 /* manualViewController.swift */,
+				9C5448012288A92F00B3421D /* ScoreViewController.swift */,
+				9C54480922895E9E00B3421D /* ScoreClass.swift */,
 				F95A32252285C2F600C3549E /* Main.storyboard */,
 				F95A324F2286AA7500C3549E /* Assets.xcassets */,
 				F95A322A2285C2F700C3549E /* LaunchScreen.storyboard */,
@@ -268,8 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5448022288A92F00B3421D /* ScoreViewController.swift in Sources */,
 				F9B6B06A2287E687005CED74 /* manualViewController.swift in Sources */,
 				F946A0B62287348E00116686 /* DAWAEUIStoryboard.swift in Sources */,
+				9C54480A22895E9E00B3421D /* ScoreClass.swift in Sources */,
 				F946A0B222870D2900116686 /* BattleViewController.swift in Sources */,
 				F946A0B422871D5900116686 /* ChoosePakemonViewController.swift in Sources */,
 				F95A32242285C2F600C3549E /* ViewController.swift in Sources */,

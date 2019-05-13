@@ -1,28 +1,38 @@
 //
-//  manualViewController.swift
+//  ScoreViewController.swift
 //  iosGameApp19_05_13
 //
-//  Created by VMwareMojave on 2019/5/11.
+//  Created by t450sMAC on 2019/5/13.
 //  Copyright © 2019 hsumax0216. All rights reserved.
 //
 
 import UIKit
-import SafariServices
-class manualViewController: UIViewController, SFSafariViewControllerDelegate {
-    @IBAction func WebBtn(_ sender: UIButton) {
-        if let url = URL(string: "https://github.com/hsumax0216/iosGameApp19_05_13/"){
-            let controller = SFSafariViewController(url: url)
-            controller.delegate = self
-            present(controller,animated: true,completion: nil)
-        }
-    }
+
+class ScoreViewController: UIViewController {
+    var score:Int?
+    var life:Int?
+    let nameSpace:String = ""
+    @IBOutlet var scoreLbael: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let score=score{
+            if score < 0{
+                scoreLbael.text = String(0)
+            }
+            else{
+                scoreLbael.text = String(score)
+            }
+            
+        }
+        if let life=life,life > 0{
+            print("Win")
+        }
+        else{
+            print("lose")
+        }
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 

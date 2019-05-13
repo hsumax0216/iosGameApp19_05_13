@@ -25,6 +25,8 @@ class ChoosePakemonViewController: UIViewController {
         let rAndom=Int.random(in:0...2)
         //let raNdom=Int.random(in:0...2)
         if let identifier = segue.identifier, let number = Int(identifier) {
+            destinationController?.playerNum = number
+            destinationController?.compNum = rAndom
             destinationController?.role = roles[number]
             destinationController?.comP = roles[rAndom]
             print("prepare SEGUE if")
