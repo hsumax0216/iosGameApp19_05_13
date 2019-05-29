@@ -375,7 +375,7 @@
                     <navigationItem key="navigationItem" title="score" id="z4h-QE-3n4">
                         <barButtonItem key="rightBarButtonItem" title="New Game" id="tom-Z2-j8f">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="VMi-O8-nTk"/>
+                                <segue destination="kWV-4Q-nFQ" kind="unwind" unwindAction="unwindScoreViewControllerWithSegue:" id="QbY-Qw-Ml9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -384,6 +384,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jY-vo-z81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kWV-4Q-nFQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5550.7246376811599" y="16.741071428571427"/>
         </scene>
@@ -403,6 +404,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CC6-uH-JmK"/>
-        <segue reference="VMi-O8-nTk"/>
     </inferredMetricsTieBreakers>
 </document>

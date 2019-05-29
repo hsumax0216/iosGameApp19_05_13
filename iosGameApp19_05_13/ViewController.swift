@@ -25,7 +25,9 @@ class ViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
-    
 
+    @IBAction func unwindScoreViewController(segue:UIStoryboardSegue){
+        
+    }
 }
 
